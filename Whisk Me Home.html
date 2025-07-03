@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whisk Me Home Bakery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Nova', cursive, sans-serif;
+      background-color: #fdf4f4;
+      color: #3b1a20;
+    }
+    header {
+      background: linear-gradient(90deg, #e4a3b0, #b899d3);
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      width: 100px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #3b1a20;
+    }
+    header p {
+      font-style: italic;
+      margin-top: 10px;
+      color: #3b1a20;
+    }
+    nav {
+      background-color: #f8e4e9;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #86295f;
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    .page-section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .active {
+      display: block;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1608198093002-ad4e005484cf') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    h3 {
+      color: #b34784;
+    }
+    .menu-item {
+      margin-bottom: 30px;
+    }
+    
+    footer {
+      background-color: #e4a3b0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #3b1a20;
+    }
+    input, textarea, button {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background-color: #b56aa5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #994b8b;
+    }
+    .menu-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: block;
+    }
+  </style>
+  <script>
+    function showPage(id) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      const hero = document.querySelector('.hero');
+      hero.style.display = id === 'home' ? 'flex' : 'none';
+    }
+    window.onload = () => {
+      showPage('home');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <img src="Logo.jpg" alt="Whisk Me Home Logo">
+  <h1>Whisk Me Home</h1>
+  <p>"A hug in every bite"</p>
+</header>
+
+<nav>
+  <a href="#" onclick="showPage('home')">Home</a>
+  <a href="#" onclick="showPage('about')">About</a>
+  <a href="#" onclick="showPage('menu')">Menu</a>
+  <a href="#" onclick="showPage('order')">Order</a>
+  <a href="#" onclick="showPage('contact')">Contact</a>
+</nav>
+
+<div class="hero">
+  <h2>Welcome to Whisk Me Home</h2>
+</div>
+
+<section id="home" class="page-section">
+  <h2>Welcome</h2>
+  <p>Welcome to Whisk Me Home — where every treat is crafted with love, nostalgia, and a sprinkle of magic.</p>
+</section>
+
+<section id="about" class="page-section">
+  <h2>About Us</h2>
+  <p>Whisk Me Home is more than a name it's a feeling. You know that warm, nostalgic moment when a bite of something familiar takes you back to your childhood kitchen, your grandmother’s table, or a celebration filled with laughter? That’s the feeling we strive to create with every bake.
+
+Baking has been a part of my life for as long as I can remember. From the first time I held a whisk as a child, I knew that baking would be my love language – a way of bringing comfort, joy, and connection to others. Whether it was cakes, weekend treats, or bakes for family and friends, the kitchen was always where my heart felt most at home.
+
+Whisk Me Home is inspired by that very idea: food has the power to transport us. Every rusk, cake, scone or lamington I make is crafted with care, using recipes that evoke home, warmth, and togetherness.
+So welcome – whether you're celebrating something special or just craving a sweet taste of home, I hope you find something here that truly hits the spot.</p>
+</section>
+
+<section id="menu" class="page-section">
+  <h2>Our Menu</h2>
+
+  <h3>Cupcakes – “Little Moments of Joy”</h3>
+  <div class="menu-item">
+    <img src="Backyard Vanilla.jpg" class="menu-image" alt="Backyard Vanilla">
+    <strong>Backyard Vanilla (Plain 6-pack) – R35</strong><br>
+    Simple, soft, and sweet – just like afternoons spent playing in the garden with a vanilla cupcake in hand. A classic comfort you'll never outgrow.
+  </div>
+
+  <div class="menu-item">
+    <img src="Whisked Wonders.jpg" class="menu-image" alt="Whisked Wonders">
+    <strong>Whisked Wonders (Assorted 6-pack with cream frosting) – R45</strong><br>
+    A colourful swirl of joy in every bite. Includes chocolate, vanilla, and strawberry flavours – frosted with love and ready to brighten any day.
+  </div>
+
+  <div class="menu-item">
+    <img src="Sunday Batch.jpg" class="menu-image" alt="Sunday Batch">
+    <strong>Sunday Batch (Plain 12-pack) – R60</strong><br>
+    A dozen soft cupcakes, perfect for sharing or keeping all to yourself (we won't judge!). Light, fluffy, and filled with home-baked goodness.
+  </div>
+  <div class="menu-item">
+    <img src="Celebration Box.jpg" class="menu-image" alt="Celebration Box">
+    <strong>Celebration Box (Assorted 12-pack with cream frosting) – R85</strong><br>
+    Make any gathering feel like a party. This box of frosted favourites brings chocolate, vanilla, and strawberry together in a sweet, celebratory mix.
+  </div>
+
+  <h3>Scones – “Mornings at Gran’s”</h3>
+  <div class="menu-item">
+    <img src="Warm Hug Scones.jpg" class="menu-image" alt="Warm Hug Scones">
+    <strong>Warm Hug Scones (Classic Plain 6-pack) – R40</strong><br>
+    Golden and tender, these plain scones are your morning hug in pastry form - perfect with butter and jam or straight from the oven.
+  </div>
+  <div class="menu-item">
+    <img src="Gather Around Dozen.jpg" class="menu-image" alt="Gather Round Dozen">
+    <strong>Gather ‘Round Dozen (Classic Plain 12-pack) – R65</strong><br>
+    Twelve buttery scones made for sharing at breakfast tables, tea times, and everything in between. Simple, soft, and full of tradition.
+  </div>
+  <div class="menu-item">
+    <img src="Berry Batch Scones.jpg" class="menu-image" alt="Berry Patch Scones">
+    <strong>Berry Patch Scones (Fruit Infused 6-pack) – R50</strong><br>
+    Studded with sweet berries, these scones bring the flavours of a garden stroll right to your plate. Available in Strawberry or Blueberry.
+  </div>
+  <div class="menu-item">
+    <img src="Sweet garden dozen.jpg" class="menu-image" alt="Sweet Garden Dozen">
+    <strong>Sweet Garden Dozen (Fruit-Infused 12-pack) – R95</strong><br>
+    A generous dozen of fruit-filled scones, bursting with Strawberry or Blueberry bites. Perfect for tea parties, picnics, and pantry jars.
+  </div>
+
+  <h3>Loaves of Love – Banana & Carrot</h3>
+  <div class="menu-item">
+    <img src="Banana Bread and Hugs.jpg" class="menu-image" alt="Banana Bread">
+    <strong>Banana Bread & Hugs – R50</strong><br>
+    Moist, fragrant, and made from overripe bananas – just like Mom used to make. Each slice carries the taste of after-school comfort.
+  </div>
+  <div class="menu-item">
+    <img src="Carrot cake memories.jpg" class="menu-image" alt="Carrot Cake">
+    <strong>Carrot Cake Memories – R50</strong><br>
+    Spiced with cinnamon and packed with carrots, this loaf is soft, rich, and nostalgic. Every bite whispers of family teatimes and handwritten recipes.
+  </div>
+
+  <h3>Rusks – “Dunked in Comfort”</h3>
+  <div class="menu-item">
+    <img src="Morning Moment Rusks.jpg" class="menu-image" alt="Morning Moment Rusks">
+    <strong>Morning Moment Rusks (500g) – R65</strong><br>
+    Crunchy, cozy, and perfect for dunking. Choose from Buttermilk, Muesli, Chocolate, or Coconut. A little bite of home to start your day right.
+  </div>
+  <div class="menu-item">
+    <img src="Hearty home rusks.jpg" class="menu-image" alt="Hearty Home Rusks">
+    <strong>Hearty Home Rusks (1kg) – R100</strong><br>
+    A full kilo of our most loved rusks - ideal for sharing or stocking up. Dip them into your morning coffee and feel instantly grounded.
+  </div>
+
+  <h3>Lamingtons – “Celebration Squares”</h3>
+  <div class="menu-item">
+    <img src="Lamington Nibbles.jpg" class="menu-image" alt="Lamington Nibbles">
+    <strong>Lamington Nibbles (8-pack) – R55</strong><br>
+    Soft sponge squares dipped in chocolate or strawberry and rolled in coconut. A bite sized treat that brings joy with every nibble.
+  </div>
+  <div class="menu-item">
+    <img src="Lamington memories.jpg" class="menu-image" alt="Lamington Memories">
+    <strong>Lamington Memories (12-pack) – R90</strong><br>
+    Twelve squares of pure nostalgia. Perfect for parties, picnics, or quiet moments when you crave a sweet taste of childhood.
+  </div>
+</section>
+
+<section id="order" class="page-section">
+  <h2>How to Order</h2>
+  <p>Ready to treat yourself or someone special? Here's how to place your order with Whisk Me Home:</p>
+  <ol>
+    <li><strong>Send your order via WhatsApp:</strong> <a href="https://wa.me/0672602394" target="_blank">067 260 2394</a></li>
+    <li><strong>Pay to confirm your order.</strong> Use your invoice number as a reference when making payment. Then send your proof of payment on WhatsApp.</li>
+    <li><strong>Orders are processed weekly.</strong></li>
+    <li><strong>Orders close every Thursday at 12:00 noon.</strong></li>
+    <li><strong>Pick-up/Delivery:</strong> Orders are ready on Fridays and can be picked up or delivered at NWU between 15:00 and 17:00.</li>
+  </ol>
+</section>
+
+<section id="contact" class="page-section">
+  <h2>Contact Us</h2>
+  <p><strong>Location:</strong> Mahikeng & Mmabatho</p>
+  <p><strong>Phone/WhatsApp:</strong> 067 260 2394</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Whisk Me Home Bakery. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
